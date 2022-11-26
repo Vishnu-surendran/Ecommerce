@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from askbootstrap.com/preview/osahan-eat/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Oct 2022 10:14:35 GMT -->
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Askbootstrap">
+<meta name="author" content="Askbootstrap">
+<title>Osahan Eat - Online Food Ordering Website HTML Template</title>
+
+<link rel="icon" type="image/png" href="img/favicon.png">
+
+<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="/vendor/fontawesome/css/all.min.css" rel="stylesheet">
+
+<link href="/vendor/icofont/icofont.min.css" rel="stylesheet">
+
+<link href="/vendor/select2/css/select2.min.css" rel="stylesheet">
+
+<link href="/css/osahan.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/vendor/owl-carousel/owl.carousel.css">
+<link rel="stylesheet" href="/vendor/owl-carousel/owl.theme.css">
+</head>
+<body>
+
+<div class="modal fade" id="add-address-modal" tabindex="-1" role="dialog" aria-labelledby="add-address" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="add-address">Add Delivery Address</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<form>
+<div class="form-row">
+<div class="form-group col-md-12">
+<label for="inputPassword4">Delivery Area</label>
+<div class="input-group">
+<input type="text" class="form-control" placeholder="Delivery Area">
+<div class="input-group-append">
+<button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="icofont-ui-pointer"></i></button>
+</div>
+</div>
+</div>
+<div class="form-group col-md-12">
+<label for="inputPassword4">Complete Address
+</label>
+<input type="text" class="form-control" placeholder="Complete Address e.g. house number, street name, landmark">
+</div>
+<div class="form-group col-md-12">
+<label for="inputPassword4">Delivery Instructions
+</label>
+<input type="text" class="form-control" placeholder="Delivery Instructions e.g. Opposite Gold Souk Mall">
+</div>
+<div class="form-group mb-0 col-md-12">
+<label for="inputPassword4">Nickname
+</label>
+<div class="btn-group btn-group-toggle d-flex justify-content-center" data-toggle="buttons">
+<label class="btn btn-info active">
+<input type="radio" name="options" id="option1" autocomplete="off" checked> Home
+</label>
+<label class="btn btn-info">
+<input type="radio" name="options" id="option2" autocomplete="off"> Work
+</label>
+<label class="btn btn-info">
+<input type="radio" name="options" id="option3" autocomplete="off"> Other
+</label>
+</div>
+ </div>
+</div>
+</form>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn d-flex w-50 text-center justify-content-center btn-outline-primary" data-dismiss="modal">CANCEL
+</button><button type="button" class="btn d-flex w-50 text-center justify-content-center btn-primary">SUBMIT</button>
+</div>
+</div>
+</div>
+</div>
+<%- include('./partials/usernav.ejs')%>
+<%var cartproducts%>
+<%if( cartproducts){%>
+<section class="offer-dedicated-body mt-4 mb-4 pt-2 pb-2">
+<div class="container">
+<div class="row">
+<div class="col-md-8">
+<div class="offer-dedicated-body-left">
+
+<div class="pt-2"></div>
+<div class="bg-white rounded shadow-sm p-4 mb-4" id="remove">
+<h4 class="mb-1">Enter delivery address</h4>
+<form id="addaddress">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Name</label>
+        <input type="text" class="form-control" id="inputEmail4" placeholder="Name" name="name">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Building Number</label>
+        <input type="text" class="form-control" id="inputPassword4" placeholder="Your building name or number " name="buildingn">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAddress">Address</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="address">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="inputState">State</label>
+            <select id="inputState" class="form-control" name="state">
+              <option selected>Choose...</option>
+              <option>Kerala</option>
+              <option>Tamilnadu</option>
+              <option>Karnataka</option>
+              <option>Mumbai</option>
+            </select>
+          </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">City</label>
+        <select id="inputState" class="form-control" name="city">
+          <option selected>Choose...</option>
+          <option>Trivandum</option>
+          <option>Kollam</option>
+          <option>Alappuzha</option>
+          <option>Kottayam</option>
+        </select>
+      </div>
+      <div class="form-group col-md-4" >
+        <label for="inputZip">Zip</label>
+        <input type="text" class="form-control" id="inputZip" name="zip">
+      </div>
+    </div>
+    <input type="hidden" class="form-control" id="totalprice" placeholder="" name='total'value="<%=grandTotal%>">
+    <button type="button" onclick="remove()" class="btn btn-primary">Add delivery address</button>
+    <h6 class="mt-2" >OR</h6>
+    <p>Choose an address</p>
+    <div class="form-radio ml-3"  >
+        <input type="radio" class="form-check-input " id="flexRadioDefault" name="address2">
+        <label class='pl-2'for=""> <h6><%=address%></h6></label>
+      </div>
+  </form>
+
+</div>
+<div class="pt-2"></div>
+<div class="bg-white rounded shadow-sm p-4 osahan-payment">
+    <h4 class="mb-1">Choose payment method</h4>
+
+    <div class="row">
+    <div class="col-sm-4 pr-0">
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="icofont-bank-alt"></i> Netbanking</a>
+    <a class="nav-link" id="v-pills-cash-tab" data-toggle="pill" href="#v-pills-cash" role="tab" aria-controls="v-pills-cash" aria-selected="false"><i class="icofont-money"></i> Pay on Delivery</a>
+    </div>
+    </div>
+    <div class="col-sm-8 pl-0">
+    <div class="tab-content h-100" id="v-pills-tabContent">
+    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+    <h6 class="mb-3 mt-0 mb-3">Add new card</h6>
+    <p>WE ACCEPT <span class="osahan-card">
+    <i class="icofont-visa-alt"></i> <i class="icofont-mastercard-alt"></i> <i class="icofont-american-express-alt"></i> <i class="icofont-payoneer-alt"></i> <i class="icofont-apple-pay-alt"></i> <i class="icofont-bank-transfer-alt"></i> <i class="icofont-discover-alt"></i> <i class="icofont-jcb-alt"></i>
+    </span>
+    </p>
+    <form>
+    <div class="form-row">
+    <div class="form-group col-md-12">
+    <label for="inputPassword4">Card number</label>
+    <div class="input-group">
+    <input type="number" class="form-control" placeholder="Card number">
+    <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="icofont-card"></i></button>
+    </div>
+    </div>
+    </div>
+    <div class="form-group col-md-8">
+    <label>Valid through(MM/YY)
+    </label>
+    <input type="number" class="form-control" placeholder="Enter Valid through(MM/YY)">
+    </div>
+    <div class="form-group col-md-4">
+    <label>CVV
+    </label>
+    <input type="number" class="form-control" placeholder="Enter CVV Number">
+    </div>
+    <div class="form-group col-md-12">
+    <label>Name on card
+    </label>
+    <input type="text" class="form-control" placeholder="Enter Card number">
+    </div>
+    <div class="form-group col-md-12">
+    <div class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="customCheck1">
+    <label class="custom-control-label" for="customCheck1">Securely save this card for a faster checkout next time.</label>
+    </div>
+    </div>
+    <div class="form-group col-md-12 mb-0">
+    <a href="thanks.html" class="btn btn-success btn-block btn-lg">PAY $1329
+    <i class="icofont-long-arrow-right"></i></a>
+    </div>
+    </div>
+    </form>
+    </div>
+    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+    <h6 class="mb-3 mt-0 mb-3">Add new food card</h6>
+    <p>WE ACCEPT <span class="osahan-card">
+    <i class="icofont-sage-alt"></i> <i class="icofont-stripe-alt"></i> <i class="icofont-google-wallet-alt-1"></i>
+    </span>
+    </p>
+    <form>
+    <div class="form-row">
+    <div class="form-group col-md-12">
+    <label for="inputPassword4">Card number</label>
+    <div class="input-group">
+    <input type="number" class="form-control" placeholder="Card number">
+    <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="icofont-card"></i></button>
+    </div>
+    </div>
+    </div>
+    <div class="form-group col-md-8">
+    <label>Valid through(MM/YY)
+    </label>
+    <input type="number" class="form-control" placeholder="Enter Valid through(MM/YY)">
+    </div>
+    <div class="form-group col-md-4">
+    <label>CVV
+    </label>
+    <input type="number" class="form-control" placeholder="Enter CVV Number">
+    </div>
+    <div class="form-group col-md-12">
+    <label>Name on card
+    </label>
+    <input type="text" class="form-control" placeholder="Enter Card number">
+    </div>
+    
+    <div class="form-group col-md-12">
+    <div class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="customCheck1">
+    <label class="custom-control-label" for="customCheck1">Securely save this card for a faster checkout next time.</label>
+    </div>
+    </div>
+    <div class="form-group col-md-12 mb-0">
+    <a href="thanks.html" class="btn btn-success btn-block btn-lg">PAY $1329
+    <i class="icofont-long-arrow-right"></i></a>
+    </div>
+    </div>
+    </form>
+    </div>
+    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+    <div class="border shadow-sm-sm p-4 d-flex align-items-center bg-white mb-3">
+    <i class="icofont-apple-pay-alt mr-3 icofont-3x"></i>
+     <div class="d-flex flex-column">
+    <h5 class="card-title">Apple Pay</h5>
+    <p class="card-text">Apple Pay lets you order now & pay later at no extra cost.</p>
+    <a href="#" class="card-link font-weight-bold">LINK ACCOUNT <i class="icofont-link-alt"></i></a>
+    </div>
+    </div>
+    <div class="border shadow-sm-sm p-4 d-flex bg-white align-items-center mb-3">
+    <i class="icofont-paypal-alt mr-3 icofont-3x"></i>
+    <div class="d-flex flex-column">
+    <h5 class="card-title">Paypal</h5>
+    <p class="card-text">Paypal lets you order now & pay later at no extra cost.</p>
+    <a href="#" class="card-link font-weight-bold">LINK ACCOUNT <i class="icofont-link-alt"></i></a>
+    </div>
+    </div>
+    <div class="border shadow-sm-sm p-4 d-flex bg-white align-items-center">
+    <i class="icofont-diners-club mr-3 icofont-3x"></i>
+    <div class="d-flex flex-column">
+    <h5 class="card-title">Diners Club</h5>
+    <p class="card-text">Diners Club lets you order now & pay later at no extra cost.</p>
+    <a href="#" class="card-link font-weight-bold">LINK ACCOUNT <i class="icofont-link-alt"></i></a>
+    </div>
+    </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+    <h6 class="mb-3 mt-0 mb-3">Netbanking</h6>
+
+<h6>  • Razorpay</h6>
+    <hr>
+    <div class="form-row">
+ 
+     <div class="form-group col-md-12 mb-0">
+    <button onclick="payment()" class="btn btn-success btn-block btn-lg">PAY 
+    <i class="icofont-long-arrow-right"></i></button>
+    </div>
+    </div>
+    
+    </div>
+    <div class="tab-pane fade" id="v-pills-cash" role="tabpanel" aria-labelledby="v-pills-cash-tab">
+    <h6 class="mb-3 mt-0 mb-3">Cash</h6>
+    <p>Please keep exact change handy to help us serve you better</p>
+    <hr>
+    <form>
+    <a href="/codorder" class="btn btn-success btn-block btn-lg">PAY 
+    <i class="icofont-long-arrow-right"></i></a>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+  </body>
+</html>

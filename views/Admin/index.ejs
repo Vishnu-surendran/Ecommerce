@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from askbootstrap.com/preview/osahan-eat/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Oct 2022 10:13:23 GMT -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="Askbootstrap" />
+<meta name="author" content="Askbootstrap" />
+<title>FoodyVille</title>Admin/
+
+<link rel="icon" type="image/png" href="img/favicon.png">
+
+<link href="/Admin/vendor/icons/feather.css" rel="stylesheet" type="text/css">
+
+<link href="/Admin/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/Admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="/Admin/css/styles.css" rel="stylesheet" />
+
+<link href="/Admin/vendor/dataTables/dataTables/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+</head>
+<body class="sb-nav-fixed">
+	<%- include('../partials/adminav.ejs')%>
+<div id="layoutSidenav">
+<div id="layoutSidenav_nav">
+<nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+<div class="sb-sidenav-menu">
+    <%- include('../partials/adminNav.ejs')%>
+</div>
+<div class="sb-sidenav-footer">
+<div class="small">Logged in as:</div>
+Ask Bootstrap
+</div>
+</nav>
+</div>
+<div id="layoutSidenav_content">
+<main>
+<div class="container-fluid">
+<h1 class="mt-4">Dashboard</h1>
+<ol class="breadcrumb mb-4">
+<li class="breadcrumb-item active">Dashboard</li>
+</ol>
+<div class="row">
+<div class="col-xl-3 col-md-6">
+<div class="card bg-primary text-white mb-4">
+<div class="card-body">26 New Messages!</div>
+<div class="card-footer d-flex align-items-center justify-content-between">
+<a class="small text-white stretched-link" href="messages.html">View Details</a>
+<div class="small text-white"><i class="fas fa-angle-right"></i></div>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-md-6">
+<div class="card bg-warning text-white mb-4">
+<div class="card-body">10 New Bookings!</div>
+<div class="card-footer d-flex align-items-center justify-content-between">
+<a class="small text-white stretched-link" href="bookings.html">View Details</a>
+<div class="small text-white"><i class="fas fa-angle-right"></i></div>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-md-6">
+<div class="card bg-success text-white mb-4">
+<div class="card-body">11 New Reviews!</div>
+<div class="card-footer d-flex align-items-center justify-content-between">
+<a class="small text-white stretched-link" href="reviews.html">View Details</a>
+<div class="small text-white"><i class="fas fa-angle-right"></i></div>
+</div>
+ </div>
+</div>
+<div class="col-xl-3 col-md-6">
+<div class="card bg-danger text-white mb-4">
+<div class="card-body">10 New Bookmarks!</div>
+<div class="card-footer d-flex align-items-center justify-content-between">
+<a class="small text-white stretched-link" href="bookmarks.html">View Details</a>
+<div class="small text-white"><i class="fas fa-angle-right"></i></div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-xl-6">
+<div class="card mb-4">
+<div class="card-header">
+<i class="fas fa-chart-area mr-1"></i>
+Sales earnings this month
+</div>
+<div class="card-body">
+<canvas id="myChart" width="100%" height="40"></canvas>
+</div>
+</div>
+</div>
+<div class="col-xl-6">
+<div class="card mb-4">
+
+
+</div>
+</div>
+</div>
+<div class="card mb-4">
+
+
+</div>
+</div>
+</main>
+<footer class="py-4 bg-light mt-auto">
+<div class="container-fluid">
+<div class="d-flex align-items-center justify-content-between small">
+<div class="text-muted">Copyright &copy; FoodyVille 2022</div>
+<div>
+<a href="#">Privacy Policy</a>
+&middot;
+<a href="#">Terms &amp; Conditions</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+<% var jan %> 
+					<% var feb %> 
+					<% var march %> 
+					<% var april %> 
+					<% var may %> 
+					<% var june %> 
+					<% var july %> 
+					<% var aug %> 
+					<% var sept %> 
+					<% var oct %> 
+					<% var nov %> 
+					<% var dec %> 
+						<h1 hidden id="jan"><%= jan %> </h1>
+						<h1 hidden id="feb"><%= feb %> </h1>
+						<h1 hidden id="march"><%= march %> </h1>
+						<h1 hidden id="april"><%= april %> </h1>
+						<h1 hidden id="may"><%= may %> </h1>
+						<h1 hidden id="june"><%= june %> </h1>
+						<h1 hidden id="july"><%= july %> </h1>
+						<h1 hidden id="aug"><%= aug %> </h1>
+						<h1 hidden id="sept"><%= sept %> </h1>
+						<h1 hidden id="oct"><%= oct %> </h1>
+						<h1 hidden id="nov"><%= nov %> </h1>
+						<h1 hidden id="dec"><%= dec %> </h1>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+<script>
+ let january = document.getElementById('jan').innerHTML
+		let febuary = document.getElementById('feb').innerHTML
+		let march = document.getElementById('march').innerHTML
+		let april = document.getElementById('april').innerHTML
+		let may = document.getElementById('may').innerHTML
+		let june = document.getElementById('june').innerHTML
+		let july = document.getElementById('july').innerHTML
+		let august = document.getElementById('aug').innerHTML
+		let september = document.getElementById('sept').innerHTML
+		let october = document.getElementById('oct').innerHTML
+		let november = document.getElementById('nov').innerHTML
+		let december = document.getElementById('dec').innerHTML
+		console.log(november)
+		console.log('suii')
+		
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Jan', 'Feb', 'March', 'April','May','June','July','August','Sep','Oct','Nov','Dec'],
+      datasets: [{
+        label: 'Sales',
+        data: [january,
+									febuary,
+									march,
+									april,
+									may,
+									june,
+									july,
+									august,
+									september,
+									october,
+									november,
+									december],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+</body>
+
+<!-- Mirrored from askbootstrap.com/preview/osahan-eat/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Oct 2022 10:13:52 GMT -->
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from askbootstrap.com/preview/osahan-eat/admin/add-listing.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Oct 2022 10:16:44 GMT -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="Askbootstrap" />
+<meta name="author" content="Askbootstrap" />
+<title>Admin | Add restaurant</title>
+
+<link rel="icon" type="image/png" href="img/favicon.png">
+
+<link href="/Admin/vendor/icons/feather.css" rel="stylesheet" type="text/css">
+
+<link href="/Admin/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/Admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="/Admin/css/styles.css" rel="stylesheet" />
+
+<link href="/Admin/vendor/dropzone/dist/dropzone.css" rel="stylesheet">
+
+
+
+<link href="/Admin/vendor/summernote/summernote-bs4.min.css" rel="stylesheet">
+
+<link href="/Admin/vendor/dataTables/dataTables/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+</head>
+<body class="sb-nav-fixed">
+<nav class="sb-topnav navbar navbar-expand navbar-light bg-white shadow-sm">
+<a class="navbar-brand" href="index.html"><img alt="logo" src="img/logo.png"></a>
+<button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+
+<form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+<div class="input-group">
+<input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
+<div class="input-group-append">
+<button class="btn btn-primary" type="button"><i class="feather-search"></i></button>
+</div>
+</div>
+</form>
+
+<ul class="navbar-nav ml-auto ml-md-0">
+<li class="nav-item dropdown no-arrow d-sm-none">
+<a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<i class="feather-search mr-2"></i>
+</a>
+
+<div class="dropdown-menu dropdown-menu-right p-3 shadow-sm animated--grow-in" aria-labelledby="searchDropdown">
+<form class="form-inline mr-auto w-100 navbar-search">
+<div class="input-group">
+<input type="text" class="form-control border-0 shadow-none" placeholder="Search people, jobs and more..." aria-label="Search" aria-describedby="basic-addon2">
+<div class="input-group-append">
+<button class="btn" type="button">
+<i class="feather-search"></i>
+</button>
+</div>
+</div>
+</form>
+</div>
+</li>
+<li class="nav-item dropdown no-arrow mx-1 osahan-list-dropdown">
+<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<i class="feather-message-square"></i>
+
+<span class="badge badge-danger badge-counter">8</span>
+</a>
+
+<div class="dropdown-list dropdown-menu dropdown-menu-right shadow-sm">
+<h6 class="dropdown-header">
+Message Center
+</h6>
+ <a class="dropdown-item d-flex align-items-center" href="#">
+<div class="dropdown-list-image mr-3">
+<img class="rounded-circle" src="img/user/2.png" alt="">
+<div class="status-indicator bg-success"></div>
+</div>
+<div class="font-weight-bold overflow-hidden">
+<div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
+<div class="small text-gray-500">Emily Fowler · 58m</div>
+</div>
+</a>
+<a class="dropdown-item d-flex align-items-center" href="#">
+<div class="dropdown-list-image mr-3">
+<img class="rounded-circle" src="img/user/3.png" alt="">
+<div class="status-indicator"></div>
+</div>
+<div class="overflow-hidden">
+<div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
+<div class="small text-gray-500">Jae Chun · 1d</div>
+</div>
+</a>
+<a class="dropdown-item d-flex align-items-center" href="#">
+<div class="dropdown-list-image mr-3">
+<img class="rounded-circle" src="img/user/4.png" alt="">
+<div class="status-indicator bg-warning"></div>
+</div>
+<div class="overflow-hidden">
+<div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
+<div class="small text-gray-500">Morgan Alvarez · 2d</div>
+</div>
+</a>
+<a class="dropdown-item d-flex align-items-center" href="#">
+<div class="dropdown-list-image mr-3">
+<img class="rounded-circle" src="img/user/5.png" alt="">
+<div class="status-indicator bg-success"></div>
+</div>
+<div class="overflow-hidden">
+<div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
+<div class="small text-gray-500">Chicken the Dog · 2w</div>
+</div>
+</a>
+<a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+</div>
+</li>
+<li class="nav-item dropdown no-arrow mx-1 osahan-list-dropdown">
+<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<i class="feather-bell"></i>
+
+<span class="badge badge-info badge-counter">6</span>
+</a>
+
+<div class="dropdown-list dropdown-menu dropdown-menu-right shadow-sm">
+<h6 class="dropdown-header">
+Alerts Center
+</h6>
+<a class="dropdown-item d-flex align-items-center" href="#">
+<div class="mr-3">
+<div class="icon-circle bg-primary">
+<i class="fas fa-download text-white"></i>
+</div>
+</div>
+<div>
+<div class="small text-gray-500">December 12, 2020</div>
+<span class="font-weight-bold">A new monthly report is ready to download!</span>
+</div>
+</a>
+<a class="dropdown-item d-flex align-items-center" href="#">
+<div class="mr-3">
+ <div class="icon-circle bg-success">
+<i class="fas fa-edit text-white"></i>
+</div>
+</div>
+<div>
+<div class="small text-gray-500">December 7, 2020</div>
+$290.29 has been deposited into your account!
+</div>
+</a>
+<a class="dropdown-item d-flex align-items-center" href="#">
+<div class="mr-3">
+<div class="icon-circle bg-warning">
+<i class="fas fa-folder text-white"></i>
+</div>
+</div>
+<div>
+<div class="small text-gray-500">December 2, 2020</div>
+Spending Alert: We've noticed unusually high spending for your account.
+</div>
+</a>
+<a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+</div>
+</li>
+
+<li class="nav-item dropdown no-arrow ml-1 osahan-profile-dropdown">
+<a class="nav-link dropdown-toggle pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<img class="img-profile rounded-circle" src="img/user/1.png">
+</a>
+
+<div class="dropdown-menu dropdown-menu-right shadow-sm">
+<div class="p-3 d-flex align-items-center">
+<div class="dropdown-list-image mr-3">
+<img class="rounded-circle" src="img/user/1.png" alt="">
+<div class="status-indicator bg-success"></div>
+</div>
+<div class="font-weight-bold">
+<div class="text-truncate">Gurdeep Osahan</div>
+<div class="small text-gray-500">Restaurants Owner</div>
+</div>
+</div>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="my-profile.html"><i class="feather-edit"></i> My Account</a>
+<a class="dropdown-item" href="my-profile.html"><i class="feather-settings"></i> Account Settings</a>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="https://askbootstrap.com/item/osahan-ads-listing-template/"><i class="feather-log-out"></i> Logout</a>
+</div>
+</li>
+</ul>
+</nav>
+<div id="layoutSidenav">
+<div id="layoutSidenav_nav">
+<nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+<div class="sb-sidenav-menu">
+  <%- include('../partials/adminNav.ejs')%>
+</div>
+<div class="sb-sidenav-footer">
+<div class="small">Logged in as:</div>
+Admin
+</div>
+</nav>
+</div>
+<div id="layoutSidenav_content">
+<main>
+<div class="container-fluid">
+<h1 class="mt-4">Add listing</h1>
+<ol class="breadcrumb mb-4">
+<li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+<li class="breadcrumb-item active">Add Restaurant</li>
+<%var Message%> 
+</ol>
+<div class="row">
+<div class="col-xl-12">
+<div class="card mb-4">
+<div class="card-header">
+Basic info
+</div>
+<label for="" style="text-align:center ;"><%=Message%></label>
+<div class="card-body">
+<div class="row">
+<div class="col-md-6">
+    <form class="" action="addrestaurant" method="post">
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Restaurant Name</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Restaurant Name" name="rname">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Email</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" name="remail">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Phone</label>
+          <input type="tel" class="form-control" id="exampleFormControlInput1" placeholder="Phone" name="rphone">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Expected Timing</label>
+          <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Expected Time" name="et">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Price Range</label>
+          <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Price Range" name="pr">
+        </div>
+        <div class="mb-3">
+          <label for="formFileMultiple" class="form-label">Select Image</label>
+          <input class="form-control" type="file" id="formFileMultiple" name="rimage">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Category</label>
+          <select class="form-control" id="exampleFormControlSelect1" name="rcategory">
+            <option>Veg</option>
+            <option>Non-Veg</option>
+            <option>Japanese</option>
+            <option>Chinese</option>
+    
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect2">Location</label>
+          <select class="form-control" id="exampleFormControlSelect1" name="rlocation">
+            <option>India</option>
+            <option>America</option>
+            <option>Newzealand</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Address</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="raddress"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+</div>
+
+</div>
+ </div>
+</div>
+
+</div>
+</div>
+</main>
+<footer class="py-4 bg-light mt-auto">
+<div class="container-fluid">
+<div class="d-flex align-items-center justify-content-between small">
+<div class="text-muted">Copyright &copy; Your Website 2020</div>
+<div>
+<a href="#">Privacy Policy</a>
+&middot;
+<a href="#">Terms &amp; Conditions</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+<div class="modal fade" id="edit_booking" tabindex="-1" role="dialog" aria-labelledby="edit_bookingLabel" aria-hidden="true">
+<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="edit_bookingLabel">Reply to review</h5>
+<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="form-group m-0">
+<textarea cols="60" rows="6" class="form-control" spellcheck="false"></textarea>
+</div>
+</div>
+<div class="modal-footer">
+<a class="btn btn-primary btn-block" href="#">Reply</a>
+</div>
+</div>
+</div>
+</div>
+
+<script src="/Admin/vendor/jquery/jquery.min.js" type="39dc190eb1faf30e888a8f33-text/javascript"></script>
+
+<script src="/Admin/vendor/fontawesome/js/all.min.js" type="39dc190eb1faf30e888a8f33-text/javascript"></script>
+
+<script src="/Admin/vendor/bootstrap/js/bootstrap.bundle.min.js" type="39dc190eb1faf30e888a8f33-text/javascript"></script>
+
+<script src="/Admin/js/scripts.js" type="39dc190eb1faf30e888a8f33-text/javascript"></script>
+
+<script src="/Admin/cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous" type="39dc190eb1faf30e888a8f33-text/javascript"></script>
+
+<script src="/Admin/assets/demo/chart-area-demo.js" type="39dc190eb1faf30e888a8f33-text/javascript"></script>
+<script src="/Admin/assets/demo/chart-bar-demo.js" type="39dc190eb1faf30e888a8f33-text/javascript"></script>
+<script src="/Admin/assets/demo/chart-pie-demo.js" type="39dc190eb1faf30e888a8f33-text/javascript"></script>
+
+<script src="/Admin/vendor/dataTables/dataTables/js/jquery.dataTables.min.js" type="39dc190eb1faf30e888a8f33-text/javascript"></script>
+<script src="/Admin/vendor/dataTables/dataTables/js/dataTables.bootstrap.min.js" type="39dc190eb1faf30e888a8f33-text/javascript"></script>
+<script src="/Admin/assets/demo/datatables-demo.js" type="39dc190eb1faf30e888a8f33-text/javascript"></script>
+
+<script src="/Admin/vendor/dropzone/dist/min/dropzone.min.js" type="39dc190eb1faf30e888a8f33-text/javascript"></script>
+<script type="39dc190eb1faf30e888a8f33-text/javascript">
+         $('input.date-pick').datepicker();
+      </script>
+
+<script src="/Admin/vendor/summernote/summernote-bs4.min.js" type="39dc190eb1faf30e888a8f33-text/javascript"></script>
+<script type="39dc190eb1faf30e888a8f33-text/javascript">
+         $('.editor').summernote({
+             fontSizes: ['10', '14'],
+             toolbar: [
+                 // [groupName, [list of button]]
+                 ['style', ['bold', 'italic', 'underline', 'clear']],
+                 ['font', ['strikethrough']],
+                 ['fontsize', ['fontsize']],
+                 ['para', ['ul', 'ol', 'paragraph']]
+             ],
+             placeholder: 'Write here ....',
+             tabsize: 2,
+             height: 200
+         });
+      </script>
+<script src="/Admin/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="39dc190eb1faf30e888a8f33-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"75b8433aba949214","version":"2022.8.1","r":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","si":100}' crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from askbootstrap.com/preview/osahan-eat/admin/add-listing.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Oct 2022 10:16:45 GMT -->
+</html>

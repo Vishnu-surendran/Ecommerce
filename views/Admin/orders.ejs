@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from askbootstrap.com/preview/osahan-eat/admin/orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Oct 2022 10:16:46 GMT -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="Askbootstrap" />
+<meta name="author" content="Askbootstrap" />
+<title>Orders</title>
+
+<link rel="icon" type="image/png" href="img/favicon.png">
+
+<link href="vendor/icons/feather.css" rel="stylesheet" type="text/css">
+
+<link href="vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="css/styles.css" rel="stylesheet" />
+</head>
+<body class="sb-nav-fixed">
+    <%- include('../partials/adminav.ejs')%>
+<div id="layoutSidenav">
+<div id="layoutSidenav_nav">
+<nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+<div class="sb-sidenav-menu">
+    <%- include('../partials/adminNav.ejs')%>
+</div>
+<div class="sb-sidenav-footer">
+<div class="small">Logged in as:</div>
+Ask Bootstrap
+</div>
+</nav>
+</div>
+<div id="layoutSidenav_content">
+<main>
+<div class="container-fluid">
+<h1 class="mt-4">Orders</h1>
+<ol class="breadcrumb mb-4">
+<li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+<li class="breadcrumb-item active">Orders</li>
+</ol>
+<div class="row">
+<div class="col-xl-12">
+<div class="card mb-4">
+<div class="card-header">
+<i class="fas fa-table mr-1"></i>
+All Listings
+</div>
+<div class="card-body">
+<div class="table-responsive">
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+<thead>
+<tr class="text-uppercase">
+<th>User</th>
+<th>User Name</th>
+<th>Restaurant</th>
+<th>Status</th>
+<th>Ordered on</th>
+<th>Total</th>
+<th>Quantity</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td><img class="img-profile rounded-circle" src="img/user/1.png"></td>
+<td> Rhona Davidson	</td>
+<td>Metro Resto</td>
+<td><button disabled="" type="button" class="btn btn-sm btn-success btn-round">delivered</button></td>
+<td>Sat, Jul 11, 2020 1:38 AM</td>
+ <td>$262.49</td>
+<td>4</td>
+<td><a href="edit-order.html" class="btn btn-primary btn-sm">View</a></td>
+</tr>
+<tr>
+<td><img class="img-profile rounded-circle" src="img/user/2.png"></td>
+<td> Herrod Chandler	</td>
+<td>Metro Resto</td>
+<td><button disabled="" type="button" class="btn btn-sm btn-danger btn-round">cancel</button></td>
+<td>Fri, Jul 10, 2020 4:55 PM</td>
+<td>$170.77</td>
+<td>5</td>
+<td><a href="edit-order.html" class="btn btn-primary btn-sm">View</a></td>
+</tr>
+<tr>
+<td><img class="img-profile rounded-circle" src="img/user/3.png"></td>
+<td> Airi Satou	</td>
+<td>Metro Resto</td>
+<td><button disabled="" type="button" class="btn btn-sm btn-success btn-round">delivered</button></td>
+<td>Fri, Jul 10, 2020 3:48 PM</td>
+<td>$26.78</td>
+<td>2</td>
+<td><a href="edit-order.html" class="btn btn-primary btn-sm">View</a></td>
+</tr>
+<tr>
+<td><img class="img-profile rounded-circle" src="img/user/4.png"></td>
+<td> Brielle Williamson	</td>
+<td>The Square restaurants</td>
+<td><button disabled="" type="button" class="btn btn-sm btn-primary btn-round">created</button></td>
+<td>Fri, Jul 10, 2020 2:24 PM</td>
+<td>$81.23</td>
+<td>2</td>
+<td><a href="edit-order.html" class="btn btn-primary btn-sm">View</a></td>
+</tr>
+<tr>
+<td><img class="img-profile rounded-circle" src="img/user/5.png"></td>
+<td> Cedric Kelly	</td>
+<td>Metro Resto</td>
+<td><button disabled="" type="button" class="btn btn-sm btn-success btn-round">delivered</button></td>
+<td>Fri, Jul 10, 2020 11:45 AM</td>
+<td>$1578.00</td>
+<td>1</td>
+<td><a href="edit-order.html" class="btn btn-primary btn-sm">View</a></td>
+</tr>
+<tr>
+<td><img class="img-profile rounded-circle" src="img/user/6.png"></td>
+<td> Ashton Cox	</td>
+<td>The Square restaurants</td>
+<td><button disabled="" type="button" class="btn btn-sm btn-primary btn-round">created</button></td>
+<td>Fri, Jul 10, 2020 11:37 AM</td>
+<td>$238.53</td>
+<td>4</td>
+<td><a href="edit-order.html" class="btn btn-primary btn-sm">View</a></td>
+</tr>
+<tr>
+<td><img class="img-profile rounded-circle" src="img/user/1.png"></td>
+<td> Garrett Winters	</td>
+<td>Metro Resto</td>
+<td><button disabled="" type="button" class="btn btn-sm btn-danger btn-round">rejected</button></td>
+<td>Thu, Jul 9, 2020 3:54 PM</td>
+<td>$107.85</td>
+<td>2</td>
+<td><a href="edit-order.html" class="btn btn-primary btn-sm">View</a></td>
+</tr>
+<tr>
+<td><img class="img-profile rounded-circle" src="img/user/2.png"></td>
+<td> Tiger Nixon	</td>
+<td>The Square restaurants</td>
+<td><button disabled="" type="button" class="btn btn-sm btn-danger btn-round">rejected</button></td>
+<td>Thu, Jul 9, 2020 3:19 PM</td>
+<td>$83.65</td>
+<td>2</td>
+<td><a href="edit-order.html" class="btn btn-primary btn-sm">View</a></td>
+</tr>
+<tr>
+<td><img class="img-profile rounded-circle" src="img/user/3.png"></td>
+<td> AMITKUMAR CHAUHAN</td>
+<td>Jassi de Parathe</td>
+<td><button disabled="" type="button" class="btn btn-sm btn-primary btn-round">created</button></td>
+<td>Thu, Jul 9, 2020 2:28 PM</td>
+<td>$46.62</td>
+<td>2</td>
+<td><a href="edit-order.html" class="btn btn-primary btn-sm">View</a></td>
+</tr>
+<tr>
+<td><img class="img-profile rounded-circle" src="img/user/4.png"></td>
+<td> Umed Ibodulloev</td>
+<td>Metro Resto</td>
+<td><button disabled="" type="button" class="btn btn-sm btn-success btn-round">delivered</button></td>
+<td>Thu, Jul 9, 2020 1:26 PM</td>
+<td>$66.71</td>
+<td>1</td>
+<td><a href="edit-order.html" class="btn btn-primary btn-sm">View</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="py-4 bg-light mt-auto">
+<div class="container-fluid">
+<div class="d-flex align-items-center justify-content-between small">
+<div class="text-muted">Copyright &copy; Your Website 2020</div>
+<div>
+<a href="#">Privacy Policy</a>
+&middot;
+<a href="#">Terms &amp; Conditions</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+<script src="vendor/jquery/jquery.min.js" type="a38d37944a4605f551133d26-text/javascript"></script>
+
+<script src="vendor/fontawesome/js/all.min.js" type="a38d37944a4605f551133d26-text/javascript"></script>
+
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="a38d37944a4605f551133d26-text/javascript"></script>
+
+<script src="js/scripts.js" type="a38d37944a4605f551133d26-text/javascript"></script>
+<script src="../../../cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="a38d37944a4605f551133d26-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"75b843411fb29214","version":"2022.8.1","r":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","si":100}' crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from askbootstrap.com/preview/osahan-eat/admin/orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Oct 2022 10:16:47 GMT -->
+</html>

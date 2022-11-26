@@ -1,0 +1,41 @@
+$(document).ready(function(){
+    'use strict';
+    
+    //======signupvalidation====//
+   $("#signupvalidation").validate({
+    rules:{
+      username:{
+        required:true,
+        minlength:3,
+        maxlength:8,
+      },
+      email:{
+  required:true,
+  email:true
+      },
+      mnumber:{
+        required:true,
+        digits:true,
+      },
+      password1:"required",
+       password2:{
+        equalTo:"#password1"
+       },
+       password2:{
+        required:true
+       }
+    }
+   })
+   $("#loginvalidation").validate({
+    rules:{
+      logemail:{
+        required:true,
+        email:true
+      },
+      logpassword:{
+  
+        required:true
+      }
+    }
+  })
+})

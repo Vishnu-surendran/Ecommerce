@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from askbootstrap.com/preview/osahan-eat/listing.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Oct 2022 10:14:27 GMT -->
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Askbootstrap">
+<meta name="author" content="Askbootstrap">
+<title>FoodyVille | restaurants</title>
+
+<link rel="icon" type="image/png" href="img/favicon.png">
+
+<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="/vendor/fontawesome/css/all.min.css" rel="stylesheet">
+
+<link href="/vendor/icofont/icofont.min.css" rel="stylesheet">
+
+<link href="/vendor/select2/css/select2.min.css" rel="stylesheet">
+
+<link href="/css/osahan.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/vendor/owl-carousel/owl.carousel.css">
+<link rel="stylesheet" href="/vendor/owl-carousel/owl.theme.css">
+</head>
+<body>
+    <%var status%>
+    <%if (status){%>
+<%- include('./partials/usernav.ejs')%>
+<%}else{%>
+    <%- include('./partials/guestNav.ejs')%>
+        <%}%>
+<section class="breadcrumb-osahan pt-5 pb-5 bg-dark position-relative text-center">
+<h1 class="text-white">Offers Near You</h1>
+<h6 class="text-white-50">Best deals at your favourite restaurants</h6>
+</section>
+<section class="section pt-5 pb-5 products-listing">
+<div class="container">
+<div class="row d-none-m">
+<div class="col-md-12">
+<div class="dropdown float-right">
+<a class="btn btn-outline-info dropdown-toggle btn-sm border-white-btn" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Sort by: <span class="text-theme">Distance</span> &nbsp;&nbsp;
+ </a>
+<div class="dropdown-menu dropdown-menu-right shadow-sm border-0 ">
+<a class="dropdown-item" href="#">Distance</a>
+<a class="dropdown-item" href="#">No Of Offers</a>
+<a class="dropdown-item" href="#">Rating</a>
+</div>
+</div>
+<h4 class="font-weight-bold mt-0 mb-3">OFFERS <small class="h6 mb-0 ml-2">299 restaurants
+</small>
+</h4>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3">
+<div class="filters shadow-sm rounded bg-white mb-4">
+<div class="filters-header border-bottom pl-4 pr-4 pt-3 pb-3">
+<h5 class="m-0">Filter By</h5>
+</div>
+<div class="filters-body">
+<div id="accordion">
+<div class="filters-card border-bottom p-4">
+<div class="filters-card-header" id="headingTwo">
+<h6 class="mb-0">
+<a href="#" class="btn-link" data-toggle="collapse" data-target="#collapsetwo" aria-expanded="true" aria-controls="collapsetwo">
+All cuisines
+<i class="icofont-arrow-down float-right"></i>
+</a>
+</h6>
+</div>
+<div id="collapsetwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+<div class="filters-card-body card-shop-filters">
+<form class="filters-search mb-3 " id="search" action="/search" method="post">
+<div class="form-group">
+
+<input type="text" class="form-control"  name='search'placeholder="Start typing to search..." id="searchProduct">
+<button type="submit" class="btn-success btn-rounded mt-2">Search<i class="icofont-search"></i></button>
+</div>
+</form>
+
+
+
+
+<div class="custom-control custom-checkbox">
+<input type="checkbox" class="custom-control-input" id="cb12">
+<label class="custom-control-label" for="cb12"> Dessert <small class="text-black-50">50</small></label>
+</div>
+<div class="custom-control custom-checkbox">
+<input type="checkbox" class="custom-control-input" id="cb13">
+<label class="custom-control-label" for="cb13"> Chicken <small class="text-black-50">32</small></label>
+ </div>
+<div class="custom-control custom-checkbox">
+<input type="checkbox" class="custom-control-input" id="cb14">
+<label class="custom-control-label" for="cb14"> Indian <small class="text-black-50">156</small></label>
+</div>
+
+</div>
+</div>
+</div>
+<div class="filters-card border-bottom p-4">
+
+
+</div>
+<div class="filters-card border-bottom p-4">
+<div class="filters-card-header" id="headingOffer">
+
+</a>
+
+</div>
+
+</div>
+<div class="filters-card p-4">
+<div class="filters-card-header" id="headingCategory">
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="col-md-9">
+
+<div class="row">
+    <%for (var i=0; i< products.length; i++){ %>
+<div class="col-md-4 col-sm-6 mb-4 pb-2">
+<div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
+<div class="list-card-image">
+<div class="star position-absolute"><span class="badge badge-success"><i class="icofont-star"></i> 3.1 (300+)</span></div>
+<div class="favourite-heart text-danger position-absolute"><a href="restaurant?id=<%=products[i]._id%>"><i class="icofont-heart"></i></a></div>
+<div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span></div>
+<a href="restaurant?id=<%=products[i]._id%>">
+<img src="img/list/<%=products[i].img%>" class="img-fluid item-img">
+</a>
+</div>
+<div class="p-3 position-relative">
+<div class="list-card-body">
+<h6 class="mb-1"><a href="restaurant?id=<%=products[i]._id%>" class="text-black"><%=products[i].restaurantname%></a></h6>
+<p class="text-gray mb-3"><%=products[i].categories%></p>
+<p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="icofont-wall-clock"></i> 20–25 min</span> <span class="float-right text-black-50"> $250 FOR TWO</span></p>
+</div>
+<div class="list-card-badge">
+<span class="badge badge-success">OFFER</span> <small>65% off | Use Coupon EAT500</small>
+</div>
+</div>
+</div>
+</div>
+<%}%>
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section pt-5 pb-5 text-center bg-white">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<h5 class="m-0">Operate food store or restaurants? <a href="login.html">Work With Us</a></h5>
+</div>
+</div>
+</div>
+</section>
+<section class="footer pt-5 pb-5">
+<div class="container">
+<div class="row">
+<div class="col-md-4 col-12 col-sm-12">
+<h6 class="mb-3">Subscribe to our Newsletter</h6>
+<form class="newsletter-form mb-1">
+<div class="input-group">
+<input type="text" placeholder="Please enter your email" class="form-control">
+<div class="input-group-append">
+<button type="button" class="btn btn-primary">
+Subscribe
+</button>
+</div>
+</div>
+</form>
+<p><a class="text-info" href="register.html">Register now</a> to get updates on <a href="offers.html">Offers and Coupons</a></p>
+<div class="app">
+<p class="mb-2">DOWNLOAD APP</p>
+<a href="#">
+<img class="img-fluid" src="img/google.png">
+</a>
+<a href="#">
+<img class="img-fluid" src="img/apple.png">
+</a>
+</div>
+</div>
+<div class="col-md-1 col-sm-6 mobile-none">
+</div>
+<div class="col-md-2 col-4 col-sm-4">
+<h6 class="mb-3">About OE</h6>
+<ul>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Culture</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Careers</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</div>
+<div class="col-md-2 col-4 col-sm-4">
+<h6 class="mb-3">For Foodies</h6>
+<ul>
+<li><a href="#">Community</a></li>
+<li><a href="#">Developers</a></li>
+<li><a href="#">Blogger Help</a></li>
+<li><a href="#">Verified Users</a></li>
+<li><a href="#">Code of Conduct</a></li>
+ </ul>
+</div>
+<div class="col-md-2 col-4 col-sm-4">
+<h6 class="mb-3">For Restaurants</h6>
+<ul>
+<li><a href="#">Advertise</a></li>
+<li><a href="#">Add a Restaurant</a></li>
+<li><a href="#">Claim your Listing</a></li>
+<li><a href="#">For Businesses</a></li>
+<li><a href="#">Owner Guidelines</a></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="footer-bottom-search pt-5 pb-5 bg-white">
+<div class="container">
+<div class="row">
+<div class="col-xl-12">
+<p class="text-black">POPULAR COUNTRIES</p>
+<div class="search-links">
+<a href="#">Australia</a> | <a href="#">Brasil</a> | <a href="#">Canada</a> | <a href="#">Chile</a> | <a href="#">Czech Republic</a> | <a href="#">India</a> | <a href="#">Indonesia</a> | <a href="#">Ireland</a> | <a href="#">New Zealand</a> | <a href="#">United Kingdom</a> | <a href="#">Turkey</a> | <a href="#">Philippines</a> | <a href="#">Sri Lanka</a> | <a href="#">Australia</a> | <a href="#">Brasil</a> | <a href="#">Canada</a> | <a href="#">Chile</a> | <a href="#">Czech Republic</a> | <a href="#">India</a> | <a href="#">Indonesia</a> | <a href="#">Ireland</a> | <a href="#">New Zealand</a> | <a href="#">United Kingdom</a> | <a href="#">Turkey</a> | <a href="#">Philippines</a> | <a href="#">Sri Lanka</a><a href="#">Australia</a> | <a href="#">Brasil</a> | <a href="#">Canada</a> | <a href="#">Chile</a> | <a href="#">Czech Republic</a> | <a href="#">India</a> | <a href="#">Indonesia</a> | <a href="#">Ireland</a> | <a href="#">New Zealand</a> | <a href="#">United Kingdom</a> | <a href="#">Turkey</a> | <a href="#">Philippines</a> | <a href="#">Sri Lanka</a> | <a href="#">Australia</a> | <a href="#">Brasil</a> | <a href="#">Canada</a> | <a href="#">Chile</a> | <a href="#">Czech Republic</a> | <a href="#">India</a> | <a href="#">Indonesia</a> | <a href="#">Ireland</a> | <a href="#">New Zealand</a> | <a href="#">United Kingdom</a> | <a href="#">Turkey</a> | <a href="#">Philippines</a> | <a href="#">Sri Lanka</a>
+</div>
+<p class="mt-4 text-black">POPULAR FOOD</p>
+<div class="search-links">
+<a href="#">Fast Food</a> | <a href="#">Chinese</a> | <a href="#">Street Food</a> | <a href="#">Continental</a> | <a href="#">Mithai</a> | <a href="#">Cafe</a> | <a href="#">South Indian</a> | <a href="#">Punjabi Food</a> | <a href="#">Fast Food</a> | <a href="#">Chinese</a> | <a href="#">Street Food</a> | <a href="#">Continental</a> | <a href="#">Mithai</a> | <a href="#">Cafe</a> | <a href="#">South Indian</a> | <a href="#">Punjabi Food</a><a href="#">Fast Food</a> | <a href="#">Chinese</a> | <a href="#">Street Food</a> | <a href="#">Continental</a> | <a href="#">Mithai</a> | <a href="#">Cafe</a> | <a href="#">South Indian</a> | <a href="#">Punjabi Food</a> | <a href="#">Fast Food</a> | <a href="#">Chinese</a> | <a href="#">Street Food</a> | <a href="#">Continental</a> | <a href="#">Mithai</a> | <a href="#">Cafe</a> | <a href="#">South Indian</a> | <a href="#">Punjabi Food</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="pt-4 pb-4 text-center">
+<div class="container">
+<p class="mt-0 mb-0">© Copyright 2020 Osahan Eat. All Rights Reserved</p>
+<small class="mt-0 mb-0"> Made with <i class="fas fa-heart heart-icon text-danger"></i> by
+<a class="text-danger" target="_blank" href="https://www.instagram.com/iamgurdeeposahan/">Gurdeep Osahan</a> - <a class="text-primary" target="_blank" href="https://askbootstrap.com/">Ask Bootstrap</a>
+</small>
+</div>
+</footer>
+<script>
+    $("#search").submit(e => {
+            if ($("#searchProduct").val()) {
+                $("#search").submit()
+
+            }
+            else {
+                e.preventDefault();
+            }
+        })
+</script>
+ <script src="/vendor/jquery/jquery-3.3.1.slim.min.js" type="161669301cf00b276822bad2-text/javascript"></script>
+
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js" type="161669301cf00b276822bad2-text/javascript"></script>
+
+<script src="/vendor/select2/js/select2.min.js" type="161669301cf00b276822bad2-text/javascript"></script>
+
+<script src="/vendor/owl-carousel/owl.carousel.js" type="161669301cf00b276822bad2-text/javascript"></script>
+
+<script src="/js/custom.js" type="161669301cf00b276822bad2-text/javascript"></script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="161669301cf00b276822bad2-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"75b840901c705c85","version":"2022.8.1","r":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","si":100}' crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from askbootstrap.com/preview/osahan-eat/listing.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Oct 2022 10:14:27 GMT -->
+</html>

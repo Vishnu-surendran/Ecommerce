@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from askbootstrap.com/preview/osahan-eat/admin/bookings.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Oct 2022 10:16:23 GMT -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="Askbootstrap" />
+<meta name="author" content="Askbootstrap" />
+<title>Bookings</title>
+
+<link rel="icon" type="image/png" href="/img/favicon.png">
+
+<link href="/Admin/vendor/icons/feather.css" rel="stylesheet" type="text/css">
+
+<link href="/Admin/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/Admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="/Admin/css/styles.css" rel="stylesheet" />
+
+<link href="/Admin/vendor/dataTables/dataTables/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+</head>
+<body class="sb-nav-fixed">
+    <%- include('../partials/adminav.ejs')%>
+<div id="layoutSidenav">
+<div id="layoutSidenav_nav">
+<nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+<div class="sb-sidenav-menu">
+    <%- include('../partials/adminNav.ejs')%>
+</div>
+<div class="sb-sidenav-footer">
+<div class="small">Logged in as:</div>
+Ask Bootstrap
+</div>
+</nav>
+</div>
+<div id="layoutSidenav_content">
+<main>
+<div class="container-fluid">
+<h1 class="mt-4">Bookings</h1>
+<ol class="breadcrumb mb-4">
+<li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+<li class="breadcrumb-item active">Bookings</li>
+</ol>
+<div class="row">
+<div class="col-xl-12">
+<div class="card mb-4 order-list">
+
+<div class="card mb-4 order-list">
+<%if(!orders){%>
+    <h6>user hasnt ordered anything yet</h6>
+
+    <%}else{%>
+
+        
+        <%}%>
+  
+    <%for (i=0; i < orders.length; i++){%>
+<div class="gold-members p-4">
+<a href="#">
+</a>
+<div class="media">
+<a href="#">
+<img class="mr-4" src="/img/4.jpg" alt="Generic placeholder image">
+</a>
+<div class="media-body">
+<a href="#">
+    <%if(orders[i].status=='placed'){%>
+        <%if(orders[i].isAdmincancelled==true){%>
+    <span class="float-right "><%=orders[i].status%> on <%=orders[i].date%> <i class="icofont-check-circled text-success"></i></span>
+   <%}%>
+    <%}else{%>
+<span class="float-right text-danger" id="cancelStatus"><%=orders[i].status%> on <%=orders[i].date%> </span>
+<%}%>
+</a>
+<h6 class="mb-3"><a href="#">
+</a><a href="https://askbootstrap.com/item/osahan-grocery-bootstrap4-responsive-light-template/" class="text-dark"><%=orders[i].resturant%>
+</a>
+</h6>
+<p class="text-black-50 mb-1"><i class="feather-map-pin"></i> <%=orders[i].address%>
+</p>
+<p class="text-black-50 mb-3"><i class="feather-list"></i> ORDER #25102589748 <i class="feather-clock ml-2"></i> <%=orders[i].date%></p>
+<p class="text-dark">  <% for (var y = 0 ; y < orders[i].products.length ; y++) { %>
+    <%= orders[i].products[y].item%> X
+    <%= orders[i].products[y].quantity%> ,
+    <%}%>
+    
+</p>
+<hr>
+<div class="float-right">
+    <%if(orders[i].status=='placed'){%>
+        <a href="#0" class="btn btn-sm btn-outline-danger " onclick="cancelOrder('<%= orders[i]._id%>')"><i class="feather-trash"></i> Cancel</a>
+        <%}else{%> 
+
+<%}%>
+</div>
+<p class="mb-0 text-dark text-primary pt-2"><span class="text-dark font-weight-bold"> Total Paid:</span> <%=orders[i].amount%>
+</p>
+</div>
+</div>
+</div>
+
+<%}%>
+
+
+</div>
+
+<nav aria-label="Page navigation example">
+<ul class="pagination pagination-sm mb-4 justify-content-center">
+<li class="page-item disabled">
+<a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+</li>
+<li class="page-item"><a class="page-link" href="#">1</a></li>
+<li class="page-item"><a class="page-link" href="#">2</a></li>
+<li class="page-item"><a class="page-link" href="#">3</a></li>
+<li class="page-item">
+<a class="page-link" href="#">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+
+
+</main>
+
+
+<footer class="py-4 bg-light mt-auto">
+<div class="container-fluid">
+<div class="d-flex align-items-center justify-content-between small">
+<div class="text-muted">Copyright &copy; Your Website 2020</div>
+<div>
+<a href="#">Privacy Policy</a>
+&middot;
+<a href="#">Terms &amp; Conditions</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+<div class="modal fade" id="edit_booking" tabindex="-1" role="dialog" aria-labelledby="edit_bookingLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="edit_bookingLabel">Edit Booking</h5>
+<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="form-group">
+<label>Restaurant Name</label>
+<input type="text" class="form-control" value="Restaurant Name">
+</div>
+<div class="form-group">
+<label>Client Name</label>
+<input type="text" class="form-control" value="Mark Twain">
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="form-group">
+<label>Date</label>
+<input type="text" class="form-control" value="5 November 2020">
+</div>
+</div>
+<div class="col-md-6">
+<div class="form-group">
+<label>Time</label>
+<input type="text" class="form-control" value="08.30pm">
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-6">
+<div class="form-group">
+<label>Peolple</label>
+<input type="text" class="form-control" value="2">
+</div>
+</div>
+</div>
+
+</div>
+<div class="modal-footer">
+<a class="btn btn-primary" href="login.html">Save</a>
+</div>
+</div>
+</div>
+</div>
+
+<script src="/Admin/vendor/jquery/jquery.min.js" type="47bddcc34c50ca6e676352f0-text/javascript"></script>
+
+<script src="/Admin/vendor/fontawesome/js/all.min.js" type="47bddcc34c50ca6e676352f0-text/javascript"></script>
+
+<script src="/Admin/vendor/bootstrap/js/bootstrap.bundle.min.js" type="47bddcc34c50ca6e676352f0-text/javascript"></script>
+
+<script src="/Admin/js/scripts.js" type="47bddcc34c50ca6e676352f0-text/javascript"></script>
+
+<script src="/Admin/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="47bddcc34c50ca6e676352f0-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"75b8432e8a3e9214","version":"2022.8.1","r":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","si":100}' crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>   
+ function cancelOrder(orderId){
+     
+    $.ajax({
+url:'cancelOrder',
+data:{
+    orderId
+},method:'post',
+success:(resolve)=>{
+    console.log(resolve.Message);
+    document.getElementById('cancelStatus').style.color='red'
+      document.getElementById('cancelStatus').innerHTML=resolve.Message 
+}
+    })
+}</script>
+
+</body>
+
+<!-- Mirrored from askbootstrap.com/preview/osahan-eat/admin/bookings.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Oct 2022 10:16:27 GMT -->
+</html>
