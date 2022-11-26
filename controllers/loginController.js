@@ -45,38 +45,17 @@ const checkingforLogin=(req,res)=>{
       let status=req.session.userloggedIn
       console.log(status);
    
-
-        const restaurants=[]
-  db.collection("restaurants")
-  .find()
-  .forEach(restaurantname => restaurants.push(restaurantname))
-  .then(()=>{
-    console.log(restaurants[0].categories[0]);
    
-    res.render("home",{status:status,response,restaurants})
-  
-  }).catch(()=>{
-    console.log("error in products")
-  })
-       
-
+   
+    res.render("home",{status:status})
    
     }else{
       let status=req.session.userloggedIn
-
-        const restaurants=[]
-        db.collection("restaurants")
-        .find()
-        .forEach(restaurantname => restaurants.push(restaurantname))
-        .then(()=>{
-          console.log(restaurants[0].categories[0]);
-         
-          console.log('kength',restaurants.length);
-          res.render("home",{status:status,response,restaurants})
+     
+     
+          res.render("home",{status:status})
         
-        }).catch(()=>{
-          console.log("error in products")
-        })
+       
        
     }
       
@@ -101,17 +80,9 @@ const loginVerify=(req,res)=>{
   let status=req.session.userloggedIn
       console.log(status);
 
-        const restaurants=[]
-  db.collection("restaurants")
-  .find()
-  .forEach(restaurantname => restaurants.push(restaurantname))
-  .then(()=>{
-    console.log(restaurants[0].categories[0]);
-    res.render("home",{status:status,response,restaurants})
+    res.render("home",{status:status})
   
-  }).catch(()=>{
-    console.log("error in products")
-  })
+
        
  
 }else{
@@ -128,18 +99,8 @@ const loginPage=(req,res)=>{
   
       console.log(status);
    
+    res.render("home",{status:status})
 
-        const restaurants=[]
-  db.collection("restaurants")
-  .find()
-  .forEach(restaurantname => restaurants.push(restaurantname))
-  .then(()=>{
-    console.log(restaurants[0].categories[0]);
-    res.render("home",{status:status,response,restaurants})
-  
-  }).catch(()=>{
-    console.log("error in products")
-  })
        
     }else{
     console.log("started")
@@ -157,22 +118,12 @@ const logout=(req,res)=>{
  let status=req.session.userloggedIn
    
       console.log(status);
-      db.collection('headers').findOne({_id:ObjectId(headerid)}).then((response)=>{
-
-        const restaurants=[]
-  db.collection("restaurants")
-  .find()
-  .forEach(restaurantname => restaurants.push(restaurantname))
-  .then(()=>{
+    
     console.log(restaurants[0].categories[0]);
 
-    res.render("home",{status:status,response,restaurants})
-  
-  }).catch(()=>{
-    console.log("error in products")
-  })
-       
-      })
+    res.render("home",{status:status})
+ 
+      
 }
 
     console.log('session deleted','loggedout');
@@ -202,22 +153,8 @@ const loginValidation= (req,res)=>{
             let status=req.session.userloggedIn
         
             console.log(status);
-         
+            res.render("home",{status:status})
       
-              const restaurants=[]
-        db.collection("restaurants")
-        .find()
-        .forEach(restaurantname => restaurants.push(restaurantname))
-        .then(()=>{
-          console.log(restaurants[0].categories[0]);
-  
-          res.render("home",{status:status,response,restaurants})
-        
-        }).catch(()=>{
-          console.log("error in products")
-        })
-             
-         
         }
       }else{res.render('login',{Message:'Please check your password'})}    
         })
